@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SimpleCode.ImageProcessor</id>
+    <version>1.0.3</version>
+    <title>SimpleCode.ImageProcessor</title>
+    <authors>Kovdrya Vlad</authors>
+    <owners>Kovdrya Vlad</owners>
+    <repository type="git" url="https://github.com/kovdryavlad/diploma/tree/master/ImageProcessor" commit="d5dba97c60f4eedcae283eb34fa5e78e36f4ca88" />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>for working with images in array of pixels form. Simple filters etc.</description>
+    <releaseNotes>convolutional filters</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>ImageProcessor</tags>
+
+    <dependencies>
+      <dependency id="SimpleCode.SimpleMatrix" version="1.0.2" />
+      <dependency id="System.Drawing.Common" version="4.5.1" />
+    </dependencies>
+
+  </metadata>
+</package>
