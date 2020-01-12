@@ -451,5 +451,26 @@ namespace SimpleProcessing
         {
             DoSubdiviosion(ScaleOptions.S21);
         }
+
+        private void СтатистикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += Environment.NewLine;
+
+            StatisticInfo[] statisticInfo = ImageStatistics.GetStatistics(m_originalImage, m_workImage);
+            PrintStatisticInfo(statisticInfo[0], "R");
+            PrintStatisticInfo(statisticInfo[1], "G");
+            PrintStatisticInfo(statisticInfo[2], "B");
+
+            textBox1.Text += String.Format("{1}Загальний PSNR: {0:0.0000}{1}", statisticInfo.Select(el=>el.PSNR).Average(), Environment.NewLine);
+        }
+
+        void PrintStatisticInfo(StatisticInfo statisticInfo, string colorComponentName)
+        {
+            textBox1.Text += Environment.NewLine + "Складова " + colorComponentName + Environment.NewLine;
+
+            textBox1.Text += String.Format("Average error: {0:0.0000}{1}", statisticInfo.averageError, Environment.NewLine);    
+            textBox1.Text += String.Format("Sigma: {0:0.0000}{1}", statisticInfo.sigma, Environment.NewLine);    
+            textBox1.Text += String.Format("PSNR: {0:0.0000}{1}", statisticInfo.PSNR, Environment.NewLine);    
+        }
     }
 }
