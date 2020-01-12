@@ -160,26 +160,21 @@ namespace SimpleProcessing
             }
         }
 
-        //Image remebmered;
-        bool outoutSegmented = false;
+        bool workImageOnScreen = true;
 
         private void перемикачАБэToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (segmented == null)
-                return;
-
-            if (outoutSegmented)
+            if (workImageOnScreen)
             {
-                OutputBitmapOnPictureBox(BitmapConverter.DoubleRgbToBitmap(m_workImage));
-                outoutSegmented = false;
+                OutputBitmapOnPictureBox(BitmapConverter.DoubleRgbToBitmap(m_originalImage));
+                workImageOnScreen = false;
             }
-
             else
             {
-                OutputBitmapOnPictureBox(segmented);
-                outoutSegmented = true;
+                OutputBitmapOnPictureBox(BitmapConverter.DoubleRgbToBitmap(m_workImage));
+                workImageOnScreen = true;
             }
-           
+
         }
 
         void ApplyFilter(SimpleMatrix.Matrix kernel, double normilizer)
