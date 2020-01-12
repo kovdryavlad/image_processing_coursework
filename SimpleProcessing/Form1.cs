@@ -414,7 +414,7 @@ namespace SimpleProcessing
         {
             double k = Convert.ToDouble(toolStripTextBox1.Text.Replace(".", ","));
 
-            m_workImage = ImageScaleChanger.setImageScale(m_workImage, k);
+            m_workImage = ImageScaleChanger.ResizeImage(m_workImage, k);
             RefreshWorkImage();
         }
     }

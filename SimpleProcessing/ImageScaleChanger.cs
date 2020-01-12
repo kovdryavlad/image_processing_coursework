@@ -9,7 +9,7 @@ namespace SimpleProcessing
 {
     public class ImageScaleChanger
     {
-        public static double[,,] setImageScale(double[,,] image, double k) {
+        public static double[,,] ResizeImage(double[,,] image, double k) {
             int N = (int)(image.GetLength(1) * k);
             int M = (int)(image.GetLength(2) * k);
 
@@ -30,7 +30,7 @@ namespace SimpleProcessing
 
                     double[][] gama = getGama20(x, y);
 
-                    double[] resultRGB = ConvolutionFilter1(image, i, j, gama);
+                    double[] resultRGB = ApplyConvolutionFilterByCoords(image, i, j, gama);
 
                     scaledImage[0, i_new, j_new] = resultRGB[0];
                     scaledImage[1, i_new, j_new] = resultRGB[1];
@@ -43,7 +43,7 @@ namespace SimpleProcessing
         }
 
 
-        static double[] ConvolutionFilter1(double[,,] image, int x, int y, double[][] gama)
+        static double[] ApplyConvolutionFilterByCoords(double[,,] image, int x, int y, double[][] gama)
         {
             int height = image.GetLength(1);
             int width = image.GetLength(2);
@@ -101,6 +101,18 @@ namespace SimpleProcessing
     }
 
     public static class DoubleHelper{
-        public static double Pow(this double x, int y) => Math.Pow(x, y);
+        public static double Pow(this double x, int y)
+        {
+            switch (y)
+            {
+                case 1: return x;
+                case 2: return x * x;
+                case 3: return x * x * x;
+                case 4: return x * x * x * x;
+
+                default:
+                    return Math.Pow(x, y);
+            }
+        }
     }
 }
