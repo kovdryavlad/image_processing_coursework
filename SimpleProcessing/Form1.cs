@@ -29,6 +29,7 @@ namespace SimpleProcessing
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //testing of quarter matrix filling
             //SimpleMatrix.Matrix m = new SimpleMatrix.Matrix(3, 3, new[]{
             //    1,2,3d,
             //    4,5,6,
@@ -36,8 +37,6 @@ namespace SimpleProcessing
             //});
             //
             //System.Diagnostics.Debug.WriteLine(getKernelByQuarter(m));
-
-
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,14 +45,16 @@ namespace SimpleProcessing
             if (openFileWindow.ShowDialog() == DialogResult.OK)
             {
                 Bitmap bmp = new Bitmap(openFileWindow.FileName);
-                //if (bmp.Width > 2000 || bmp.Height > 2000)
-                //    bmp = GetScaledBitmap(bmp);
 
+                //storing image info
                 m_workImage = BitmapConverter.BitmapToDoubleRgb(bmp);
                 m_originalImage = (double[,,])m_workImage.Clone();
-
-
                 m_imageName = Path.GetFileNameWithoutExtension(openFileWindow.FileName);
+
+                //fill fields with image height and width
+                textBox1.Text = String.Format("Ширина: {0}{2}Висота: {1}", bmp.Width, bmp.Height, Environment.NewLine);
+                SubdivisionWidthTextBox.Text = bmp.Width.ToString();
+                SubdivisionHeightTextBox.Text = bmp.Height.ToString();
 
                 OutputBitmapOnPictureBox(bmp);
             }            
@@ -410,12 +411,50 @@ namespace SimpleProcessing
             ApplyFilter(kernel, 1);
         }
 
+        //scale 20
         private void МаштабуватиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             double k = Convert.ToDouble(toolStripTextBox1.Text.Replace(".", ","));
 
-            m_workImage = ImageScaleChanger.ResizeImage(m_workImage, k);
+            m_workImage = ImageScaleChanger.ResizeImage(m_workImage, k, ScaleOptions.S20);
             RefreshWorkImage();
+        }
+
+        //scale 21
+        private void S30ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            double k = Convert.ToDouble(toolStripTextBox1.Text.Replace(".", ","));
+
+            m_workImage = ImageScaleChanger.ResizeImage(m_workImage, k, ScaleOptions.S21);
+            RefreshWorkImage();
+        }
+
+        void DoSubdiviosion(ScaleOptions scaleOptions) {
+            int w = 0;
+            int h = 0;
+            try
+            {
+                w = Convert.ToInt32(SubdivisionWidthTextBox.Text);
+                h = Convert.ToInt32(SubdivisionHeightTextBox.Text);
+            }
+            catch {
+                MessageBox.Show("Помилка з конвертуванням параметрів для процедури Subdivision");
+                return;
+            }
+            m_workImage = ImageScaleChanger.SubdivisionImageResize(m_workImage, w, h, scaleOptions);
+            RefreshWorkImage();
+        }
+
+        //subdivision20
+        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DoSubdiviosion(ScaleOptions.S20);
+        }
+
+        //subdivision21
+        private void ToolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            DoSubdiviosion(ScaleOptions.S21);
         }
     }
 }

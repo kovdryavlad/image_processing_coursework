@@ -51,12 +51,21 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.маштабуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.маштабуватиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.subdiviosionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubdivisionWidthTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.SubdivisionHeightTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.s30ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.widthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +82,8 @@
             this.вЧToolStripMenuItem,
             this.контрастніФільтриToolStripMenuItem,
             this.стабілізуючіToolStripMenuItem,
-            this.маштабуванняToolStripMenuItem});
+            this.маштабуванняToolStripMenuItem,
+            this.subdiviosionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1117, 24);
@@ -248,6 +258,30 @@
             this.toolStripMenuItem7.Text = "4";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.ToolStripMenuItem7_Click);
             // 
+            // маштабуванняToolStripMenuItem
+            // 
+            this.маштабуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.маштабуватиToolStripMenuItem,
+            this.s30ToolStripMenuItem3});
+            this.маштабуванняToolStripMenuItem.Name = "маштабуванняToolStripMenuItem";
+            this.маштабуванняToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.маштабуванняToolStripMenuItem.Text = "Маштабування";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "2";
+            // 
+            // маштабуватиToolStripMenuItem
+            // 
+            this.маштабуватиToolStripMenuItem.Name = "маштабуватиToolStripMenuItem";
+            this.маштабуватиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.маштабуватиToolStripMenuItem.Text = "s20";
+            this.маштабуватиToolStripMenuItem.Click += new System.EventHandler(this.МаштабуватиToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -281,28 +315,69 @@
             this.textBox1.Size = new System.Drawing.Size(244, 100);
             this.textBox1.TabIndex = 1;
             // 
-            // маштабуванняToolStripMenuItem
+            // subdiviosionToolStripMenuItem
             // 
-            this.маштабуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.маштабуватиToolStripMenuItem});
-            this.маштабуванняToolStripMenuItem.Name = "маштабуванняToolStripMenuItem";
-            this.маштабуванняToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
-            this.маштабуванняToolStripMenuItem.Text = "Маштабування";
+            this.subdiviosionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.widthToolStripMenuItem,
+            this.SubdivisionWidthTextBox,
+            this.heightToolStripMenuItem,
+            this.SubdivisionHeightTextBox,
+            this.toolStripSeparator1,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem8});
+            this.subdiviosionToolStripMenuItem.Name = "subdiviosionToolStripMenuItem";
+            this.subdiviosionToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.subdiviosionToolStripMenuItem.Text = "Subdiviosion";
             // 
-            // toolStripTextBox1
+            // SubdivisionWidthTextBox
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTextBox1.Text = "2";
+            this.SubdivisionWidthTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubdivisionWidthTextBox.Name = "SubdivisionWidthTextBox";
+            this.SubdivisionWidthTextBox.Size = new System.Drawing.Size(100, 23);
             // 
-            // маштабуватиToolStripMenuItem
+            // SubdivisionHeightTextBox
             // 
-            this.маштабуватиToolStripMenuItem.Name = "маштабуватиToolStripMenuItem";
-            this.маштабуватиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.маштабуватиToolStripMenuItem.Text = "Go";
-            this.маштабуватиToolStripMenuItem.Click += new System.EventHandler(this.МаштабуватиToolStripMenuItem_Click);
+            this.SubdivisionHeightTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SubdivisionHeightTextBox.Name = "SubdivisionHeightTextBox";
+            this.SubdivisionHeightTextBox.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "s20";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
+            // 
+            // s30ToolStripMenuItem3
+            // 
+            this.s30ToolStripMenuItem3.Name = "s30ToolStripMenuItem3";
+            this.s30ToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.s30ToolStripMenuItem3.Text = "s21";
+            this.s30ToolStripMenuItem3.Click += new System.EventHandler(this.S30ToolStripMenuItem3_Click);
+            // 
+            // widthToolStripMenuItem
+            // 
+            this.widthToolStripMenuItem.Name = "widthToolStripMenuItem";
+            this.widthToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.widthToolStripMenuItem.Text = "width = ";
+            // 
+            // heightToolStripMenuItem
+            // 
+            this.heightToolStripMenuItem.Name = "heightToolStripMenuItem";
+            this.heightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.heightToolStripMenuItem.Text = "height = ";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Text = "s21";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.ToolStripMenuItem8_Click);
             // 
             // Form1
             // 
@@ -357,6 +432,15 @@
         private System.Windows.Forms.ToolStripMenuItem маштабуванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem маштабуватиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subdiviosionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox SubdivisionWidthTextBox;
+        private System.Windows.Forms.ToolStripTextBox SubdivisionHeightTextBox;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem s30ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem widthToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem heightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
     }
 }
 
