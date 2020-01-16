@@ -19,20 +19,23 @@ namespace SimpleProcessing
             int heightB = imageB.GetLength(1);
             int widthB= imageA.GetLength(2);
 
-            if((heightA != heightB) || (widthA != widthB))
-                throw new Exception("Images must have the same size");
+            int minHeight = Math.Min(heightA, heightB);
+            int minWidth = Math.Min(widthA, widthB);
+
+            //if((heightA != heightB) || (widthA != widthB))
+            //    throw new Exception("Images must have the same size");
 
             StatisticInfo res = new StatisticInfo();
-            res.eps = new double[heightA * widthA];
-            for (int i = 0; i < heightA; i++)
-                for (int j = 0; j < widthA; j++)
+            res.eps = new double[minHeight * minWidth];
+            for (int i = 0; i < minHeight; i++)
+                for (int j = 0; j < minWidth; j++)
                 {
                     double eps = imageA[color, i, j] - imageB[color, i, j];
                     res.averageError += eps;
                     res.eps[i * heightA + j] = eps;
                 }
 
-            res.averageError /= (heightA * widthA);
+            res.averageError /= (minHeight * minWidth);
 
             return res;
         }
