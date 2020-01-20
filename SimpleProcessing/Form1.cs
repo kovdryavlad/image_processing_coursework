@@ -472,5 +472,39 @@ namespace SimpleProcessing
             textBox1.Text += String.Format("Sigma: {0:0.0000}{1}", statisticInfo.sigma, Environment.NewLine);    
             textBox1.Text += String.Format("PSNR: {0:0.0000}{1}", statisticInfo.PSNR, Environment.NewLine);    
         }
+
+        private void S20вручнуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_workImage = BlurEffectWithoutMatrix.Apply(m_workImage);
+            RefreshWorkImage();
+        }
+
+        private void ПорівняльнийТестToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SimpleMatrix.Matrix kernel = new SimpleMatrix.Matrix(3, 3, new double[] {
+                1,    6,    1,
+                6,   36,    6,
+                1,    6,    1
+            });
+
+            double normilizer = 64;
+            kernel /= normilizer;
+
+            DateTime t1, t2;
+            double matrixTime, formulasTime;
+
+            t1 = DateTime.Now;
+            DoubleArrayImageOperations.ConvolutionFilter(m_workImage, kernel.data);
+            t2 = DateTime.Now;
+            matrixTime = (t2 - t1).TotalMilliseconds;
+
+            t1 = DateTime.Now;
+            BlurEffectWithoutMatrix.Apply(m_workImage);
+            t2 = DateTime.Now;
+            formulasTime = (t2 - t1).TotalMilliseconds;
+
+            textBox1.Text += Environment.NewLine + "Час обробки з використання матриць: " + matrixTime.ToString("0.000") + "мс"  + Environment.NewLine;
+            textBox1.Text += Environment.NewLine + "Час обробки (формула напряму): " + formulasTime.ToString("0.000") + "мс" + Environment.NewLine;
+        }
     }
 }

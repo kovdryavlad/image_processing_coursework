@@ -37,6 +37,7 @@
             this.s20ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.s30ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.s40ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.s20вручнуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вЧToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.s30ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,10 +64,11 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.статистикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.порівняльнийТестToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -125,7 +127,9 @@
             this.згладжуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.s20ToolStripMenuItem1,
             this.s30ToolStripMenuItem,
-            this.s40ToolStripMenuItem});
+            this.s40ToolStripMenuItem,
+            this.s20вручнуToolStripMenuItem,
+            this.порівняльнийТестToolStripMenuItem});
             this.згладжуванняToolStripMenuItem.Name = "згладжуванняToolStripMenuItem";
             this.згладжуванняToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.згладжуванняToolStripMenuItem.Text = "Згладжування";
@@ -133,23 +137,30 @@
             // s20ToolStripMenuItem1
             // 
             this.s20ToolStripMenuItem1.Name = "s20ToolStripMenuItem1";
-            this.s20ToolStripMenuItem1.Size = new System.Drawing.Size(91, 22);
+            this.s20ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.s20ToolStripMenuItem1.Text = "s20";
             this.s20ToolStripMenuItem1.Click += new System.EventHandler(this.S20ToolStripMenuItem_Click);
             // 
             // s30ToolStripMenuItem
             // 
             this.s30ToolStripMenuItem.Name = "s30ToolStripMenuItem";
-            this.s30ToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.s30ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.s30ToolStripMenuItem.Text = "s30";
             this.s30ToolStripMenuItem.Click += new System.EventHandler(this.S30ToolStripMenuItem_Click);
             // 
             // s40ToolStripMenuItem
             // 
             this.s40ToolStripMenuItem.Name = "s40ToolStripMenuItem";
-            this.s40ToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
+            this.s40ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.s40ToolStripMenuItem.Text = "s40";
             this.s40ToolStripMenuItem.Click += new System.EventHandler(this.S40ToolStripMenuItem_Click);
+            // 
+            // s20вручнуToolStripMenuItem
+            // 
+            this.s20вручнуToolStripMenuItem.Name = "s20вручнуToolStripMenuItem";
+            this.s20вручнуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.s20вручнуToolStripMenuItem.Text = "s20(вручну)";
+            this.s20вручнуToolStripMenuItem.Click += new System.EventHandler(this.S20вручнуToolStripMenuItem_Click);
             // 
             // вЧToolStripMenuItem
             // 
@@ -348,6 +359,13 @@
             this.toolStripMenuItem8.Text = "s21";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.ToolStripMenuItem8_Click);
             // 
+            // статистикиToolStripMenuItem
+            // 
+            this.статистикиToolStripMenuItem.Name = "статистикиToolStripMenuItem";
+            this.статистикиToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.статистикиToolStripMenuItem.Text = "Статистики";
+            this.статистикиToolStripMenuItem.Click += new System.EventHandler(this.СтатистикиToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -381,12 +399,12 @@
             this.textBox1.Size = new System.Drawing.Size(244, 492);
             this.textBox1.TabIndex = 1;
             // 
-            // статистикиToolStripMenuItem
+            // порівняльнийТестToolStripMenuItem
             // 
-            this.статистикиToolStripMenuItem.Name = "статистикиToolStripMenuItem";
-            this.статистикиToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.статистикиToolStripMenuItem.Text = "Статистики";
-            this.статистикиToolStripMenuItem.Click += new System.EventHandler(this.СтатистикиToolStripMenuItem_Click);
+            this.порівняльнийТестToolStripMenuItem.Name = "порівняльнийТестToolStripMenuItem";
+            this.порівняльнийТестToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.порівняльнийТестToolStripMenuItem.Text = "Порівняльний тест";
+            this.порівняльнийТестToolStripMenuItem.Click += new System.EventHandler(this.ПорівняльнийТестToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -451,6 +469,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem статистикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem s20вручнуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem порівняльнийТестToolStripMenuItem;
     }
 }
 
